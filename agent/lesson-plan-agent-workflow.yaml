@@ -1,0 +1,28 @@
+kind: workflow
+trigger:
+  kind: OnConversationStart
+  id: trigger_wf
+  actions:
+    - kind: InvokeAzureAgent
+      id: node-1772740058429
+      agent:
+        name: NTG-QSP-Agent
+      conversationId: =System.ConversationId
+      input:
+        messages: ""
+      output:
+        autoSend: true
+    - kind: InvokeAzureAgent
+      id: node-1772740069774
+      agent:
+        name: NTG-LessonPlanning-Agent
+      conversationId: =System.ConversationId
+      input:
+        messages: ""
+      output:
+        autoSend: true
+    - kind: EndConversation
+      id: node-1772740079035
+id: ""
+name: lesson-plan-orchestration-workflow
+description: ""
