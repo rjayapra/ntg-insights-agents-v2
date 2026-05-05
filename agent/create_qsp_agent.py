@@ -31,10 +31,13 @@ project = AIProjectClient(
 openai = project.get_openai_client()
 
 # [START tool_declaration]
+# MCP_SERVER_URL should be the Foundry IQ knowledge base MCP endpoint, e.g.
+#   https://<search>.search.windows.net/knowledgebases/ntg-qsp-kb/mcp?api-version=2025-11-01-preview
 tool = MCPTool(
     server_label=MCP_SERVER_LABEL,
     server_url=MCP_SERVER_URL,
     require_approval="never",
+    allowed_tools=["knowledge_base_retrieve"],
     project_connection_id=MCP_CONNECTION_NAME,
 )
 # [END tool_declaration]

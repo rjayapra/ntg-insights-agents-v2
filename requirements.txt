@@ -1,5 +1,6 @@
 azure-ai-agents
-azure-ai-projects
+azure-ai-projects>=2.0.0
 azure-identity
+azure-search-documents>=11.7.0b2
 python-dotenv
 requests
